@@ -1,4 +1,4 @@
-import { Controller, Get, Param, Post } from '@nestjs/common';
+import { Body, Controller, Get, Param, Post } from '@nestjs/common';
 import { PostService } from './post.service';
 import { CreatePostDto } from './dto/create-post.dto';
 import { PostByCategoryDto } from './dto/post-by-category.dto';
@@ -8,7 +8,7 @@ export class PostController {
   constructor(private readonly postService: PostService) {}
 
   @Post()
-  create(createUserDto: CreatePostDto) {
+  create(@Body() createUserDto: CreatePostDto) {
     return this.postService.create(createUserDto);
   }
 
@@ -17,8 +17,8 @@ export class PostController {
     return await this.postService.findAll();
   }
 
-  @Get() 
-  async findByCategory(postByCategoryDto: PostByCategoryDto){
+  @Get('category')
+  async findByCategory(@Body() postByCategoryDto: PostByCategoryDto) {
     return await this.postService.findByCategory(postByCategoryDto);
   }
 

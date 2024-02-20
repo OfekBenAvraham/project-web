@@ -12,11 +12,17 @@ import { PostRepository } from './post/post.repository';
 import { PostService } from './post/post.service';
 import { CategoryRepository } from './category/category.repository';
 import { CategoryService } from './category/category.service';
+import { ServeStaticModule } from '@nestjs/serve-static';
+import * as path from 'path';
 
 @Module({
   imports: [
-    MongooseModule.forRoot('mongodb://localhost:27017'),
+    MongooseModule.forRoot('mongodb://127.0.0.1:27017/maker-mingle'),
     MongooseModule.forFeature(forFeatureDb),
+    ServeStaticModule.forRoot({
+      rootPath: path.join(__dirname, '..', 'images'),
+      serveRoot: '/images',
+    }),
   ],
   controllers: [
     AppController,
@@ -27,11 +33,11 @@ import { CategoryService } from './category/category.service';
   providers: [
     AppService,
     UserService,
+    PostService,
+    CategoryService,
     UserRepository,
     PostRepository,
-    PostService,
     CategoryRepository,
-    CategoryService,
   ],
   exports: [UserService, CategoryService, PostService],
 })

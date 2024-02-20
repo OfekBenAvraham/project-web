@@ -1,5 +1,6 @@
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
 import mongoose, { HydratedDocument, Types } from 'mongoose';
+import { Category } from 'src/category/entities/category.entity';
 
 @Schema()
 export class Comment {
@@ -30,7 +31,7 @@ export class Post {
     type: mongoose.Schema.Types.ObjectId,
     ref: 'Category',
   })
-  category: Types.ObjectId;
+  category: Category;
 
   @Prop({ required: true })
   imageUrl: string;
