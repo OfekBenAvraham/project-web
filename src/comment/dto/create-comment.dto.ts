@@ -1,6 +1,6 @@
 import { IsNotEmpty, IsString, MaxLength } from 'class-validator';
 
-export class CreateCommandDto {
+export class CreateCommentDto {
   @IsNotEmpty()
   @IsString()
   user: string;
@@ -11,6 +11,6 @@ export class CreateCommandDto {
 
   @IsNotEmpty()
   @IsString()
-  @MaxLength(500, { message: 'Command is too long.' })
-  command: string;
+  @MaxLength(500, { message: 'Comment is too long.' })
+  comment: string;
 }

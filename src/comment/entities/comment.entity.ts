@@ -4,7 +4,7 @@ import { Post } from 'src/post/entities/post.entity';
 import { User } from 'src/user/entities/user.entity';
 
 @Schema({ timestamps: true })
-export class Command {
+export class comment {
   _id?: Types.ObjectId;
 
   @Prop({ required: true, type: mongoose.Schema.Types.ObjectId, ref: 'User' })
@@ -14,8 +14,8 @@ export class Command {
   post: Post;
 
   @Prop({ required: true, type: String })
-  command: string;
+  comment: string;
 }
 
-export type CommandDocument = HydratedDocument<Command>;
-export const CommandSchema = SchemaFactory.createForClass(Command);
+export type CommentDocument = HydratedDocument<comment>;
+export const CommentSchema = SchemaFactory.createForClass(comment);
