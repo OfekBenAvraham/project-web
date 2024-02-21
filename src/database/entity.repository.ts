@@ -11,8 +11,6 @@ export abstract class EntityRepository<T extends HydratedDocument<any>> {
   constructor(protected readonly entityModel: Model<T>) {}
 
   create(createEntityData: unknown): Promise<T> {
-    console.log('Mongoose model instance:', this.entityModel);
-
     return this.entityModel.create(createEntityData);
   }
 

@@ -1,7 +1,6 @@
 import { Body, Controller, Get, Param, Post } from '@nestjs/common';
 import { CommandService } from './command.service';
 import { CreateCommandDto } from './dto/create-command.dto';
-import { CommandByPostDto } from './dto/command-by-post.dto';
 
 @Controller('command')
 export class CommandController {
