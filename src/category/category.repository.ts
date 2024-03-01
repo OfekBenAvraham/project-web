@@ -7,8 +7,8 @@ import { Category, CategoryDocument } from './entities/category.entity';
 @Injectable()
 export class CategoryRepository extends EntityRepository<CategoryDocument> {
   constructor(
-    @InjectModel(Category.name) CategoryModel: Model<CategoryDocument>,
+    @InjectModel(Category.name) categoryModel: Model<CategoryDocument>,
   ) {
-    super(CategoryModel);
+    super(categoryModel);
   }
 }
