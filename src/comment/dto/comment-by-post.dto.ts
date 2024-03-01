@@ -1,6 +1,6 @@
 import { IsString } from 'class-validator';
 
-export class CommandByPostDto {
+export class CommentByPostDto {
   @IsString()
   id: string;
 }

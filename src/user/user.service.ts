@@ -11,6 +11,10 @@ export class UserService {
     return this.userRepository.create(createUserDto);
   }
 
+  async findUserById(id: string) {
+    return this.userRepository.findOne({ _id: id });
+  }
+
   async login(loginUserDto: LoginUserDto) {
     let user = await this.userRepository.findOne({ email: loginUserDto.email });
 

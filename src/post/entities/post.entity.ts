@@ -2,15 +2,16 @@ import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
 import mongoose, { HydratedDocument, Types } from 'mongoose';
 import { Category } from 'src/category/entities/category.entity';
 
-@Schema()
-export class Comment {
-  @Prop({ required: true, type: mongoose.Schema.Types.ObjectId, ref: 'User' })
-  user: Types.ObjectId;
+// @Schema()
+// export class Comment {
+//   @Prop({ required: true, type: mongoose.Schema.Types.ObjectId, ref: 'User' })
+//   user: Types.ObjectId;
 
-  @Prop({ required: true })
-  comment: string;
-}
+//   @Prop({ required: true })
+//   comment: string;
+// }
 
+@Schema({ timestamps: true })
 export class Post {
   _id?: Types.ObjectId;
 
@@ -35,10 +36,9 @@ export class Post {
 
   @Prop({ required: true })
   imageUrl: string;
-
-  @Prop({ type: [Comment] })
-  comments?: Comment[];
 }
+// @Prop({ type: [Comment] })
+// comments?: Comment[];
 
 export type PostDocument = HydratedDocument<Post>;
 export const PostSchema = SchemaFactory.createForClass(Post);

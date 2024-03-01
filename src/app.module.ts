@@ -14,6 +14,9 @@ import { CategoryRepository } from './category/category.repository';
 import { CategoryService } from './category/category.service';
 import { ServeStaticModule } from '@nestjs/serve-static';
 import * as path from 'path';
+import { CommentController } from './comment/comment.controller';
+import { commentService } from './comment/comment.service';
+import { CommentRepository } from './comment/comment.repository';
 
 @Module({
   imports: [
@@ -29,16 +32,19 @@ import * as path from 'path';
     UserController,
     CategoryController,
     PostController,
+    CommentController,
   ],
   providers: [
     AppService,
     UserService,
     PostService,
     CategoryService,
+    commentService,
     UserRepository,
     PostRepository,
     CategoryRepository,
+    CommentRepository,
   ],
-  exports: [UserService, CategoryService, PostService],
+  exports: [UserService, CategoryService, PostService, commentService],
 })
 export class AppModule {}
