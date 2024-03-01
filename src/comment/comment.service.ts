@@ -14,7 +14,6 @@ export class commentService {
 
   async create(createCommentDto: CreateCommentDto) {
     let user = await this.userService.findUserById(createCommentDto.user);
-    console.log(user);
 
     if (!user) {
       throw new HttpException('user not found.', HttpStatus.NOT_FOUND);
