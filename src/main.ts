@@ -4,19 +4,18 @@ import { ValidationPipe } from '@nestjs/common';
 import helmet from 'helmet';
 import rateLimit from 'express-rate-limit';
 
+require('dotenv').config();
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
   app.use(helmet());
   app.enableCors(); // Enable CORS
   app.use(
     rateLimit({
-      windowMs: 15 * 60 * 1000, // 15 minutes
+      windowMs: 1, // 15 minutes
       max: 100, // limit each IP to 100 requests per windowMs
     }),
   );
-
   app.useGlobalPipes(new ValidationPipe());
   await app.listen(3000);
 }
-
 bootstrap();

@@ -1,6 +1,6 @@
 import { Injectable } from '@nestjs/common';
 import { FilterQuery, Model } from 'mongoose';
-import { EntityRepository } from 'src/database/entity.repository';
+import { EntityRepository } from '../database/entity.repository';
 import { InjectModel } from '@nestjs/mongoose';
 import { Post, PostDocument } from './entities/post.entity';
 

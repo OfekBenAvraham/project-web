@@ -1,8 +1,8 @@
 import { HttpException, HttpStatus, Injectable } from '@nestjs/common';
 import { CommentRepository } from './comment.repository';
 import { CreateCommentDto } from './dto/create-comment.dto';
-import { PostService } from 'src/post/post.service';
-import { UserService } from 'src/user/user.service';
+import { PostService } from '../post/post.service';
+import { UserService } from '../user/user.service';
 
 @Injectable()
 export class commentService {

@@ -1,6 +1,6 @@
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
 import mongoose, { HydratedDocument, Types } from 'mongoose';
-import { Category } from 'src/category/entities/category.entity';
+import { Category } from '../../category/entities/category.entity';
 
 // @Schema()
 // export class Comment {

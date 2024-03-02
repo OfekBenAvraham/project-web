@@ -2,7 +2,7 @@ import { HttpException, HttpStatus, Injectable } from '@nestjs/common';
 import { PostRepository } from './post.repository';
 import { CreatePostDto } from './dto/create-post.dto';
 import { PostByCategoryDto } from './dto/post-by-category.dto';
-import { CategoryService } from 'src/category/category.service';
+import { CategoryService } from '../category/category.service';
 
 @Injectable()
 export class PostService {

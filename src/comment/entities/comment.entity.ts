@@ -1,7 +1,7 @@
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
 import mongoose, { HydratedDocument, Types } from 'mongoose';
-import { Post } from 'src/post/entities/post.entity';
-import { User } from 'src/user/entities/user.entity';
+import { Post } from '../../post/entities/post.entity';
+import { User } from '../../user/entities/user.entity';
 
 @Schema({ timestamps: true })
 export class Comment {
