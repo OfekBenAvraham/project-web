@@ -17,7 +17,7 @@ export class PostController {
     return await this.postService.findAll();
   }
 
-  @Get('category')
+  @Post('category')
   async findByCategory(@Body() postByCategoryDto: PostByCategoryDto) {
     return await this.postService.findByCategory(postByCategoryDto);
   }
