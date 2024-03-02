@@ -22,6 +22,9 @@ export class Post {
   description: string;
 
   @Prop({ required: true })
+  materials: string;
+
+  @Prop({ required: true })
   process: string;
 
   @Prop({ type: [String] })
