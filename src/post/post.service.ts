@@ -28,11 +28,16 @@ export class PostService {
   }
 
   findOne(id: string) {
-    return this.postRepository.findOne(
+    let post = this.postRepository.findOne(
       { _id: id },
       {},
       { populate: 'category', lean: true },
     );
+
+    if (!post) {
+      throw new HttpException('Post not found.', HttpStatus.NOT_FOUND);
+    }
+    return post;
   }
 
   async findByCategory(postByCategoryDto: PostByCategoryDto) {

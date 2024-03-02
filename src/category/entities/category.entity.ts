@@ -7,6 +7,9 @@ export class Category {
 
   @Prop({ required: true, type: String })
   name: string;
+
+  @Prop({ required: true, type: String })
+  imageUrl: string;
 }
 
 export type CategoryDocument = HydratedDocument<Category>;
