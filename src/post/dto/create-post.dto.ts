@@ -12,6 +12,10 @@ export class CreatePostDto {
 
   @IsNotEmpty()
   @IsString()
+  materials: string;
+
+  @IsNotEmpty()
+  @IsString()
   process: string;
 
   @ArrayMaxSize(3)
