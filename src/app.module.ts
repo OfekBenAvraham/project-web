@@ -29,7 +29,8 @@ import { AuthService } from './auth/auth.service';
       serveRoot: '/images',
     }),
     JwtModule.register({
-      secret: '2cf63dde04e8646116a44522772515f66a1aae463d4a84982239fed16e49655b21a890cb5fefd866e9e73e901a199955468dc3517d4184bce90dd2de90748316',
+      secret:
+        '2cf63dde04e8646116a44522772515f66a1aae463d4a84982239fed16e49655b21a890cb5fefd866e9e73e901a199955468dc3517d4184bce90dd2de90748316',
       signOptions: { expiresIn: '60s' },
     }),
   ],
