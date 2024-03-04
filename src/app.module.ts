@@ -22,7 +22,9 @@ import { AuthService } from './auth/auth.service';
 
 @Module({
   imports: [
-    MongooseModule.forRoot('mongodb://127.0.0.1:27017/maker-mingle'),
+    MongooseModule.forRoot(
+      'mongodb+srv://guypar1997:gp123@project-web.8kaignp.mongodb.net/',
+    ),
     MongooseModule.forFeature(forFeatureDb),
     ServeStaticModule.forRoot({
       rootPath: path.join(__dirname, '..', 'images'),
