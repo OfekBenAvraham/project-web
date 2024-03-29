@@ -33,9 +33,7 @@ let UserController = class UserController {
         if (!user) {
             throw new common_1.UnauthorizedException('Invalid credentials');
         }
-        console.log(user);
         const payload = { email: user.email, sub: user._id };
-        console.log(payload);
         return {
             access_token: this.jwtService.sign(payload),
         };

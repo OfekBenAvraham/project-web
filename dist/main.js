@@ -5,7 +5,6 @@ const app_module_1 = require("./app.module");
 const common_1 = require("@nestjs/common");
 const helmet_1 = require("helmet");
 const express_rate_limit_1 = require("express-rate-limit");
-require('dotenv').config();
 async function bootstrap() {
     const app = await core_1.NestFactory.create(app_module_1.AppModule);
     app.use((0, helmet_1.default)());

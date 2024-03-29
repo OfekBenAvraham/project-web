@@ -25,10 +25,12 @@
 /// <reference types="mongoose/types/inferschematype" />
 import { commentService } from './comment.service';
 import { CreateCommentDto } from './dto/create-comment.dto';
+import { JwtService } from '@nestjs/jwt';
 export declare class CommentController {
     private readonly commentService;
-    constructor(commentService: commentService);
-    create(createCommentDto: CreateCommentDto): Promise<import("mongoose").Document<unknown, {}, import("./entities/comment.entity").Comment> & import("./entities/comment.entity").Comment & Required<{
+    private jwtService;
+    constructor(commentService: commentService, jwtService: JwtService);
+    create(createCommentDto: CreateCommentDto, req: any): Promise<import("mongoose").Document<unknown, {}, import("./entities/comment.entity").Comment> & import("./entities/comment.entity").Comment & Required<{
         _id: import("mongoose").Types.ObjectId;
     }>>;
     findAll(): Promise<(import("mongoose").Document<unknown, {}, import("./entities/comment.entity").Comment> & import("./entities/comment.entity").Comment & Required<{

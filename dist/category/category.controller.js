@@ -23,6 +23,9 @@ let CategoryController = class CategoryController {
     create(createUserDto) {
         return this.categoryService.create(createUserDto);
     }
+    async findById(id) {
+        return await this.categoryService.findOne(id);
+    }
     async findAll() {
         return await this.categoryService.findAll();
     }
@@ -35,6 +38,13 @@ __decorate([
     __metadata("design:paramtypes", [create_category_dto_1.CreateCategoryDto]),
     __metadata("design:returntype", void 0)
 ], CategoryController.prototype, "create", null);
+__decorate([
+    (0, common_1.Get)(':id'),
+    __param(0, (0, common_1.Param)('id')),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [String]),
+    __metadata("design:returntype", Promise)
+], CategoryController.prototype, "findById", null);
 __decorate([
     (0, common_1.Get)(),
     __metadata("design:type", Function),

@@ -20,8 +20,8 @@ let commentService = class commentService {
         this.postService = postService;
         this.userService = userService;
     }
-    async create(createCommentDto) {
-        let user = await this.userService.findUserById(createCommentDto.user);
+    async create(createCommentDto, id) {
+        let user = await this.userService.findUserById(id);
         if (!user) {
             throw new common_1.HttpException('user not found.', common_1.HttpStatus.NOT_FOUND);
         }
@@ -29,7 +29,7 @@ let commentService = class commentService {
         if (!post) {
             throw new common_1.HttpException('post not found.', common_1.HttpStatus.NOT_FOUND);
         }
-        return this.commentRepository.create(createCommentDto);
+        return this.commentRepository.create({ ...createCommentDto, user: id });
     }
     findAll() {
         return this.commentRepository.find();

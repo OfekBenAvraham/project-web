@@ -32,7 +32,7 @@ export declare class commentService {
     private readonly postService;
     private readonly userService;
     constructor(commentRepository: CommentRepository, postService: PostService, userService: UserService);
-    create(createCommentDto: CreateCommentDto): Promise<import("mongoose").Document<unknown, {}, import("./entities/comment.entity").Comment> & import("./entities/comment.entity").Comment & Required<{
+    create(createCommentDto: CreateCommentDto, id: string): Promise<import("mongoose").Document<unknown, {}, import("./entities/comment.entity").Comment> & import("./entities/comment.entity").Comment & Required<{
         _id: import("mongoose").Types.ObjectId;
     }>>;
     findAll(): Promise<(import("mongoose").Document<unknown, {}, import("./entities/comment.entity").Comment> & import("./entities/comment.entity").Comment & Required<{

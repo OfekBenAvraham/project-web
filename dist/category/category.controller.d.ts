@@ -31,6 +31,9 @@ export declare class CategoryController {
     create(createUserDto: CreateCategoryDto): Promise<import("mongoose").Document<unknown, {}, import("./entities/category.entity").Category> & import("./entities/category.entity").Category & Required<{
         _id: import("mongoose").Types.ObjectId;
     }>>;
+    findById(id: string): Promise<import("mongoose").Document<unknown, {}, import("./entities/category.entity").Category> & import("./entities/category.entity").Category & Required<{
+        _id: import("mongoose").Types.ObjectId;
+    }>>;
     findAll(): Promise<(import("mongoose").Document<unknown, {}, import("./entities/category.entity").Category> & import("./entities/category.entity").Category & Required<{
         _id: import("mongoose").Types.ObjectId;
     }>)[]>;
