@@ -15,7 +15,7 @@ import { CategoryService } from './category/category.service';
 import { ServeStaticModule } from '@nestjs/serve-static';
 import * as path from 'path';
 import { CommentController } from './comment/comment.controller';
-import { commentService } from './comment/comment.service';
+import { CommentService } from './comment/comment.service';
 import { CommentRepository } from './comment/comment.repository';
 import { JwtModule } from '@nestjs/jwt';
 import { AuthService } from './auth/auth.service';
@@ -39,25 +39,25 @@ import { JwtStrategy } from './auth/jwt.strategy';
   ],
 
   controllers: [
+    CommentController,
     AppController,
     UserController,
     CategoryController,
     PostController,
-    CommentController,
   ],
   providers: [
+    CommentService,
+    CommentRepository,
     AuthService,
     AppService,
     UserService,
     PostService,
     CategoryService,
-    commentService,
     UserRepository,
     PostRepository,
     CategoryRepository,
-    CommentRepository,
     JwtStrategy
   ],
-  exports: [UserService, CategoryService, PostService, commentService],
+  exports: [CommentService, UserService, CategoryService, PostService],
 })
 export class AppModule {}

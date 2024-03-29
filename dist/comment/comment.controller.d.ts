@@ -23,13 +23,13 @@
 /// <reference types="mongoose/types/virtuals" />
 /// <reference types="mongoose" />
 /// <reference types="mongoose/types/inferschematype" />
-import { commentService } from './comment.service';
+import { CommentService } from './comment.service';
 import { CreateCommentDto } from './dto/create-comment.dto';
 import { JwtService } from '@nestjs/jwt';
 export declare class CommentController {
     private readonly commentService;
     private jwtService;
-    constructor(commentService: commentService, jwtService: JwtService);
+    constructor(commentService: CommentService, jwtService: JwtService);
     create(createCommentDto: CreateCommentDto, req: any): Promise<import("mongoose").Document<unknown, {}, import("./entities/comment.entity").Comment> & import("./entities/comment.entity").Comment & Required<{
         _id: import("mongoose").Types.ObjectId;
     }>>;

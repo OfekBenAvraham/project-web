@@ -47,26 +47,26 @@ exports.AppModule = AppModule = __decorate([
             }),
         ],
         controllers: [
+            comment_controller_1.CommentController,
             app_controller_1.AppController,
             user_controller_1.UserController,
             category_controller_1.CategoryController,
             post_controller_1.PostController,
-            comment_controller_1.CommentController,
         ],
         providers: [
+            comment_service_1.CommentService,
+            comment_repository_1.CommentRepository,
             auth_service_1.AuthService,
             app_service_1.AppService,
             user_service_1.UserService,
             post_service_1.PostService,
             category_service_1.CategoryService,
-            comment_service_1.commentService,
             user_repository_1.UserRepository,
             post_repository_1.PostRepository,
             category_repository_1.CategoryRepository,
-            comment_repository_1.CommentRepository,
             jwt_strategy_1.JwtStrategy
         ],
-        exports: [user_service_1.UserService, category_service_1.CategoryService, post_service_1.PostService, comment_service_1.commentService],
+        exports: [comment_service_1.CommentService, user_service_1.UserService, category_service_1.CategoryService, post_service_1.PostService],
     })
 ], AppModule);
 //# sourceMappingURL=app.module.js.map

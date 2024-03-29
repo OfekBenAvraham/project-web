@@ -9,12 +9,12 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.commentService = void 0;
+exports.CommentService = void 0;
 const common_1 = require("@nestjs/common");
 const comment_repository_1 = require("./comment.repository");
 const post_service_1 = require("../post/post.service");
 const user_service_1 = require("../user/user.service");
-let commentService = class commentService {
+let CommentService = class CommentService {
     constructor(commentRepository, postService, userService) {
         this.commentRepository = commentRepository;
         this.postService = postService;
@@ -35,14 +35,14 @@ let commentService = class commentService {
         return this.commentRepository.find();
     }
     findByPostId(id) {
-        return this.commentRepository.find({ post: id });
+        return this.commentRepository.find({ post: id }, {}, { populate: 'user', lean: true });
     }
 };
-exports.commentService = commentService;
-exports.commentService = commentService = __decorate([
+exports.CommentService = CommentService;
+exports.CommentService = CommentService = __decorate([
     (0, common_1.Injectable)(),
     __metadata("design:paramtypes", [comment_repository_1.CommentRepository,
         post_service_1.PostService,
         user_service_1.UserService])
-], commentService);
+], CommentService);
 //# sourceMappingURL=comment.service.js.map

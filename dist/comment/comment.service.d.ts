@@ -27,7 +27,7 @@ import { CommentRepository } from './comment.repository';
 import { CreateCommentDto } from './dto/create-comment.dto';
 import { PostService } from '../post/post.service';
 import { UserService } from '../user/user.service';
-export declare class commentService {
+export declare class CommentService {
     private readonly commentRepository;
     private readonly postService;
     private readonly userService;

@@ -61,6 +61,6 @@ __decorate([
 ], CommentController.prototype, "findByPostId", null);
 exports.CommentController = CommentController = __decorate([
     (0, common_1.Controller)('comment'),
-    __metadata("design:paramtypes", [comment_service_1.commentService, jwt_1.JwtService])
+    __metadata("design:paramtypes", [comment_service_1.CommentService, jwt_1.JwtService])
 ], CommentController);
 //# sourceMappingURL=comment.controller.js.map
