@@ -12,8 +12,8 @@ export class commentService {
     private readonly userService: UserService,
   ) {}
 
-  async create(createCommentDto: CreateCommentDto) {
-    let user = await this.userService.findUserById(createCommentDto.user);
+  async create(createCommentDto: CreateCommentDto, id: string) {
+    let user = await this.userService.findUserById(id);
 
     if (!user) {
       throw new HttpException('user not found.', HttpStatus.NOT_FOUND);
@@ -22,7 +22,7 @@ export class commentService {
     if (!post) {
       throw new HttpException('post not found.', HttpStatus.NOT_FOUND);
     }
-    return this.commentRepository.create(createCommentDto);
+    return this.commentRepository.create({...createCommentDto, user: id});
   }
 
   findAll() {

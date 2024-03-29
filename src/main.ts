@@ -5,16 +5,9 @@ import helmet from 'helmet';
 import rateLimit from 'express-rate-limit';
 
 async function bootstrap() {
-  const app = await NestFactory.create(AppModule, {
-    bodyParser: true,
-  });
+  const app = await NestFactory.create(AppModule);
   app.use(helmet());
-  // app.enableCors(); // Enable CORS
-  app.enableCors({
-    allowedHeaders: ['content-type'],
-    origin: 'http://localhost:3000',
-    credentials: true,
-  });
+  app.enableCors(); // Enable CORS
   app.use(
     rateLimit({
       windowMs: 1, // 15 minutes
@@ -25,5 +18,3 @@ async function bootstrap() {
   await app.listen(3000);
 }
 bootstrap();
-
-
