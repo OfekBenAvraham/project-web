@@ -11,6 +11,7 @@ export class Category {
   @Prop({ required: true, type: String })
   imageUrl: string;
 }
+//commit
 
 export type CategoryDocument = HydratedDocument<Category>;
 export const CategorySchema = SchemaFactory.createForClass(Category);
