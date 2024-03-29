@@ -19,6 +19,7 @@ import { commentService } from './comment/comment.service';
 import { CommentRepository } from './comment/comment.repository';
 import { JwtModule } from '@nestjs/jwt';
 import { AuthService } from './auth/auth.service';
+import { JwtStrategy } from './auth/jwt.strategy';
 // check
 @Module({
   imports: [
@@ -55,6 +56,7 @@ import { AuthService } from './auth/auth.service';
     PostRepository,
     CategoryRepository,
     CommentRepository,
+    JwtStrategy
   ],
   exports: [UserService, CategoryService, PostService, commentService],
 })

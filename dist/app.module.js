@@ -28,6 +28,7 @@ const comment_service_1 = require("./comment/comment.service");
 const comment_repository_1 = require("./comment/comment.repository");
 const jwt_1 = require("@nestjs/jwt");
 const auth_service_1 = require("./auth/auth.service");
+const jwt_strategy_1 = require("./auth/jwt.strategy");
 let AppModule = class AppModule {
 };
 exports.AppModule = AppModule;
@@ -63,6 +64,7 @@ exports.AppModule = AppModule = __decorate([
             post_repository_1.PostRepository,
             category_repository_1.CategoryRepository,
             comment_repository_1.CommentRepository,
+            jwt_strategy_1.JwtStrategy
         ],
         exports: [user_service_1.UserService, category_service_1.CategoryService, post_service_1.PostService, comment_service_1.commentService],
     })
