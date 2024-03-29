@@ -11,10 +11,9 @@ async function bootstrap() {
   app.use(helmet());
   // app.enableCors(); // Enable CORS
   app.enableCors({
-    "origin": "*",
-    "methods": "GET,HEAD,PUT,PATCH,POST,DELETE",
-    "preflightContinue": false,
-    "optionsSuccessStatus": 204
+    allowedHeaders: ['content-type'],
+    origin: 'http://localhost:3000',
+    credentials: true,
   });
   app.use(
     rateLimit({
